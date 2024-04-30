@@ -1,0 +1,59 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Container from "@components/container.astro";
+import Sectionhead from "@components/sectionhead.astro";
+import PricingCard from "@components/pricing.astro";
+
+const pricing = [
+  {
+    name: "Basic",
+    price: "$15",
+    popular: false,
+    features: [
+      "Google Drive/OneDrive Integration",
+      "Low-speed backup/restore",
+      "Extra charge 10% for site migration", 
+      "Standard Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+  {
+    name: "Pro",
+    price: {
+      monthly: "$25",
+      annual: "$16",
+      discount: "5%",
+      original: "$24",
+    },
+    popular: true,
+    features: [
+      "AWS S3 Standard Integration",
+      "High-speed backup/restore",
+      "Extra charge 5% for site migration",
+      "Priority Support",
+    ],
+    button: {
+      text: "Get Started",
+      link: "/contact",
+    },
+  },
+];
+---
+
+<Layout title="Pricing">
+  <Container>
+    <Sectionhead>
+      <Fragment slot="title">Pricing</Fragment>
+      <Fragment slot="desc">
+        Simple & Predictable pricing. No Surprises.
+      </Fragment>
+    </Sectionhead>
+
+    <div class="grid md:grid-cols-2 gap-10 mx-auto max-w-screen-lg mt-12">
+      {pricing.map((item) => <PricingCard plan={item} />)}
+    </div>
+  </Container>
+</Layout>
