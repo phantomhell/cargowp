@@ -1,0 +1,69 @@
+---
+// @ts-ignore
+import { Icon } from "astro-icon";
+
+const features = [
+  {
+    title: "Zero Downtime",
+    description:
+      "Our process won't hurt your business, it will take no time to backup or restore your website.",
+    icon: "bx:bxs-time-five",
+  },
+  {
+    title: "100% Transparent Pricing",
+    description:
+      "All items listed on the pricing page are final prices. There are no hidden costs.",
+    icon: "mdi:dollar",
+  },
+  {
+    title: "On-Demand Components",
+    description:
+       "From standard storage such as Google Drive and OneDrive to advanced storage such as AWS S3 integration, we are using the best tools to ensure that your backup or restore runs smoothly.",
+    icon: "bx:bxs-data",
+  },
+  {
+    title: "Site Migration Support",
+    description:
+      "We also help our client to migrate their website from one provider to another one, from traditional hosting to VPS. We are familiar with Google Cloud, AWS, Alibaba Cloud, and DigitalOcean",
+    icon: "bx:bxs-cloud",
+  },
+  {
+    title: "SEO Protection",
+    description:
+      "During the backup or restore process, we ensure that it won't harm your SEO. Your ranking and performance will not decrease.",
+    icon: "bx:bxs-file-find",
+  },
+  {
+    title: "Data Protection",
+    description:
+      "We will ensure that no data (databases, files, images, etc.) from the old website are left behind",
+    icon: "bx:bxs-shield",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
+    Everything you need to secure your website
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    CargoWP comes batteries included. It uses the best parts of state-of-the-art
+    tools and adds its own innovations.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
+          <Icon class="text-white" name={item.icon} />
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>
